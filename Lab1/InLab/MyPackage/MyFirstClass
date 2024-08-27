@@ -1,0 +1,30 @@
+package Lab1.PreLab.MyPackage;
+
+public class MyFirstClass {
+    private static int factorial(int num){
+        int fact =1;
+        for(int i=num;i>0;i--){
+            fact *=i;
+        }
+        return fact;
+    }
+    private static boolean isStrong(int num){
+        int temp =num;
+        int sum=0;
+        while(temp>0){
+            int rem = temp%10;
+          sum+= factorial(rem);
+          temp =temp/10;
+
+        }
+        if(num==sum){
+            return true;
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+//Question 1
+      System.out.println("factorial"+factorial(5));
+        System.out.println("isStrong"+isStrong(40585));
+    }
+}
