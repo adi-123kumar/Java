@@ -1,0 +1,16 @@
+package Lab1.PreLab.MyPackage;
+
+public class MyFirstClass {
+
+    public static void main(String[] args) {
+//        Question 1 :
+        System.out.println("Hello World");
+//        Question 2:
+        int fact =1;
+        int num =5;
+        for(int i=num;i>0;i--){
+            fact *=i;
+        }
+        System.out.println(fact);
+    }
+}
