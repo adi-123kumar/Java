@@ -1,0 +1,14 @@
+package Lab1.PreLab.MyPackage;
+import Lab1.PreLab.MyMathematics.MyIntegerMath;
+
+public class MyDemo {
+    public static void main(String[] args) {
+//      @2  Modularizing to class level
+//question 2:
+
+        System.out.println("factorial at class level  :"+ Lab1.PreLab.MyPackage.MyIntegerMath.factorial(5));
+        System.out.println("isStrong at class level:"+ Lab1.PreLab.MyPackage.MyIntegerMath.isStrong(145));
+
+
+    }
+}
