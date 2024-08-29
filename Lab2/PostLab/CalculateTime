@@ -1,0 +1,47 @@
+package Lab2.PostLab;
+
+import java.util.Random;
+
+public class CalculateTime {
+    public static void main(String[] args) {
+        int arraySize = 100000;
+        int[] array = new int[arraySize];
+        Random random = new Random();
+
+        // Generate random integers
+        for (int i = 0; i < arraySize; i++) {
+            array[i] = random.nextInt(Integer.MAX_VALUE);
+        }
+
+        // Generate a random key
+        int key = random.nextInt(Integer.MAX_VALUE);
+
+        // Measure execution time for best case (key is the first element)
+        long startTime = System.currentTimeMillis();
+        int bestCaseIndex = linearSearch(array, key, 0);
+        long endTime = System.currentTimeMillis();
+        long bestCaseTime = endTime - startTime;
+
+        // Measure execution time for average case (key is somewhere in the middle)
+        int averageCaseIndex = linearSearch(array, key, arraySize / 2);
+        long averageCaseTime = endTime - startTime;
+
+        // Measure execution time for worst case (key is not in the array)
+        int worstCaseIndex = linearSearch(array, key, arraySize + 1);
+        long worstCaseTime = endTime - startTime;
+
+        System.out.println("Best case execution time: " + bestCaseTime + " ms");
+        System.out.println("Average case execution time: " + averageCaseTime + " ms");
+        System.out.println("Worst case execution time: " + worstCaseTime + " ms");
+    }
+
+    public static int linearSearch(int[] array, int key, int startIndex) {
+        for (int i = startIndex; i < array.length; i++) {
+            if (array[i] == key) {
+                return i;
+            }
+        }
+        return -1;
+        // Key not found
+    }
+}
