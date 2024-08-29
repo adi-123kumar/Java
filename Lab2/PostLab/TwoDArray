@@ -1,0 +1,106 @@
+package Lab2.PostLab;
+
+import java.util.Scanner;
+
+public class TwoDArray {
+    public static void printMatrix(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+    public static int sumOfPrincipalDiagonal(int[][] array) {
+        int rows = array.length;
+        int columns = array[0].length;
+        int sum = 0;
+
+        if (rows != columns) {
+            System.out.println("Array is not square. Cannot calculate sum of principal diagonal.");
+            return 0;
+        }
+
+        for (int i = 0; i < rows; i++) {
+            sum += array[i][i];
+        }
+
+        return sum;
+    }
+    public static void printPrincipalDiagonal(int[][] array) {
+        int rows = array.length;
+        int columns = array[0].length;
+
+        if (rows != columns) {
+            System.out.println("Array is not square. Cannot print principal diagonal.");
+            return;
+        }
+
+        System.out.print("Principal Diagonal: ");
+        for (int i = 0; i < rows; i++) {
+            System.out.print(array[i][i] + " ");
+        }
+        System.out.println();
+    }
+    public static int sumOfAllElements(int[][] array) {
+        int sum = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                sum += array[i][j];
+            }
+        }
+
+        return sum;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+
+        int[][] array = new int[rows][columns];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                array[i][j] = scanner.nextInt();
+            }
+        }
+
+        while (true) {
+            System.out.println("Menu:");
+            System.out.println("1. Sum of all elements");
+            System.out.println("2. Print the data in matrix form");
+            System.out.println("3. Print the elements of principal diagonal");
+            System.out.println("4. Print the sum of elements in principal diagonal");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Sum of all elements: " + sumOfAllElements(array));
+                    break;
+                case 2:
+                    printMatrix(array);
+                    break;
+                case 3:
+                    printPrincipalDiagonal(array);
+                    break;
+                case 4:
+                    System.out.println("Sum of elements in principal diagonal: " + sumOfPrincipalDiagonal(array));
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    // ... (rest of the methods from the previous responses)
+}
