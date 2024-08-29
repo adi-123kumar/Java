@@ -1,0 +1,55 @@
+package Lab2.InLab;
+
+import java.util.Scanner;
+
+public class StudentMain {
+    // Main method
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input for the first student
+        System.out.println("Enter details for Student 1:");
+        System.out.print("ID: ");
+        long id1 = scanner.nextLong();
+        scanner.nextLine();  // Consume the newline character
+
+        System.out.print("Name: ");
+        String name1 = scanner.nextLine();
+
+        System.out.print("Gender (M/F): ");
+        char gender1 = scanner.next().charAt(0);
+        scanner.nextLine();  // Consume the newline character
+
+        System.out.print("Department: ");
+        String department1 = scanner.nextLine();
+
+        // Input for the second student
+        System.out.println("Enter details for Student 2:");
+        System.out.print("ID: ");
+        long id2 = scanner.nextLong();
+        scanner.nextLine();  // Consume the newline character
+
+        System.out.print("Name: ");
+        String name2 = scanner.nextLine();
+
+        System.out.print("Gender (M/F): ");
+        char gender2 = scanner.next().charAt(0);
+        scanner.nextLine();  // Consume the newline character
+
+        System.out.print("Department: ");
+        String department2 = scanner.nextLine();
+
+        // Create Student objects
+        Student student1 = new Student(name1, id1, gender1, department1);
+        Student student2 = new Student(name2, id2, gender2, department2);
+
+        // Print the details of the students
+        System.out.println("\nDetails of Student 1:");
+        System.out.println(student1);
+
+        System.out.println("\nDetails of Student 2:");
+        System.out.println(student2);
+
+        scanner.close();
+    }
+}
