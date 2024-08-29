@@ -1,0 +1,16 @@
+package Lab2.PreLab.MyPackage;
+
+import Lab2.PreLab.Stock;
+
+public class StockMain {
+    public static void main(String[] args) {
+        Stock stock = new Stock();
+        stock.setName("alpha");
+        stock.setSymbol("##");
+        stock.setPreviousClosingPrice(300000.568);
+        stock.setCurrentPrice(12000);
+
+        System.out.println(stock.toString());
+        System.out.printf("Total change in percentage is %.2f ",stock.getChangePercent());
+    }
+}
